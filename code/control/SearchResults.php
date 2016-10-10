@@ -58,7 +58,7 @@ class SearchResults extends Controller
         
         foreach ($classes_to_search as $object) {
             $results = Searchable::Results($object["ClassName"], $object["Columns"], $keywords, $limit);
-            
+
             if ($results->exists()) {
                 $objects_list->add(ArrayData::create(array(
                     "Title" => $object["Title"],
@@ -104,7 +104,7 @@ class SearchResults extends Controller
         }
         
         $keywords = $this->getQuery();
-        
+
         $this->customise(array(
             "MetaTitle" => _t(
                 'Searchable.SearchResultsFor',
